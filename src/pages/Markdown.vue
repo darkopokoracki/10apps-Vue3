@@ -4,7 +4,9 @@
 
         <section class="flex m-auto w-10/12 h-screen">
             <article class="w-1/2 border">
-                <textarea class="w-full h-full" :value="text" @input="update"></textarea>
+                <textarea class="w-full h-full" :value="text" @input="update" ref="textAreaRef">
+
+                </textarea>
             </article>
             <article class="w-1/2 border bg-gray-100" v-html="markedText"></article>
         </section>
@@ -35,6 +37,9 @@ export default {
             this.debounce(task, 500)
         },
     },
+    mounted() {
+        this.$refs.textAreaRef.focus()
+    }
 }
 </script>
 

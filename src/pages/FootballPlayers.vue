@@ -13,9 +13,14 @@
         @submit.prevent="addPlayer"
         >
 
-        <input class="border rounded" v-model="newPlayer" placeholder="type player here...">
+        <input 
+            class="border rounded w-50" 
+            v-model="newPlayer" 
+            placeholder="type player here..."
+            ref="newFootballPlayerRef"    
+        >
 
-        <button class="border rounded bg-gradient-to-r from-red-700 to-pink-500 text-white">Add Player</button>
+        <button class="border rounded bg-gradient-to-r from-red-700 to-pink-500 text-white w-50">Add Player</button>
         </form>
     </div>
 </template>
@@ -52,12 +57,20 @@ export default {
         removePlayer(index) {
             this.footballPlayers = this.footballPlayers.filter( (player, i) => i !== index)
         }
+    },
+    mounted() {
+        this.$refs.newFootballPlayerRef.focus()
     }
 }
 </script>
 
 
 
-<style>
-
+<style scoped>
+    input {
+        width: 49%;
+    }
+    button {
+        width: 49%;
+    }
 </style>

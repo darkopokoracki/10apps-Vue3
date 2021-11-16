@@ -13,6 +13,7 @@
             {{item.title}}
         </router-link>
 
+        <!-- <button class="mx-2" @click="$emit('open-login-modal')">Login</button> -->
     </nav>
 </template>
 
@@ -25,8 +26,9 @@ export default {
             list: [
                 {title: 'Football Players', to: '/football-players'},
                 {title: 'Calendar', to: '/calendar'},
-                {title: 'Markdown', to: '/markdown'}
-                {title: 'Slider Carousel', to: '/slider'}
+                {title: 'Markdown', to: '/markdown'},
+                {title: 'Slider Carousel', to: '/slider'},
+                {title: 'Calculator', to: '/calculator'}
             ]
         }
     }
